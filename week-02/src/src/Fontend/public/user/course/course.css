@@ -1,0 +1,76 @@
+:root {
+    --primary-red: #b91c1c;
+    --hover-red: #fef2f2;
+    --text-main: #333333;
+    --text-gray: #777777;
+    --bg-main: #fafafa;
+    --border-color: #f0f0f0;
+}
+* { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; }
+body { background-color: var(--bg-main); color: var(--text-main); background-image: radial-gradient(#e5e7eb 1px, transparent 1px); background-size: 20px 20px; }
+.text-red { color: var(--primary-red); }
+.text-gray { color: var(--text-gray); }
+
+/* Header thu gọn */
+.header { height: 60px; background-color: #ffffff; border-bottom: 1px solid var(--border-color); display: flex; justify-content: space-between; align-items: center; padding: 0 30px; position: sticky; top: 0; z-index: 100; box-shadow: 0 1px 3px rgba(0,0,0,0.05); }
+.header-left { display: flex; align-items: center; gap: 24px; }
+.back-btn { display: flex; align-items: center; gap: 8px; color: var(--text-gray); text-decoration: none; font-weight: 500; font-size: 15px; transition: color 0.2s; }
+.back-btn:hover { color: var(--primary-red); }
+.logo-text { font-size: 20px; font-weight: 800; letter-spacing: -1px; border-left: 2px solid var(--border-color); padding-left: 20px; }
+.header-right { display: flex; align-items: center; gap: 20px; }
+.user-profile { display: flex; align-items: center; gap: 8px; color: var(--primary-red); font-weight: 500; font-size: 14px; background: var(--hover-red); padding: 6px 12px; border-radius: 999px; }
+
+/* Main layout */
+.main-content { min-height: calc(100vh - 60px); display: flex; flex-direction: column; padding: 30px 20px; }
+.page-view { max-width: 1400px; margin: 0 auto; width: 100%; }
+.view-header { margin-bottom: 24px; }
+.view-header h2 { font-size: 24px; font-weight: 700; color: #111; margin-bottom: 4px; }
+
+/* Filter Tabs */
+.filter-tabs { display: flex; gap: 12px; margin-bottom: 24px; flex-wrap: wrap; }
+.filter-btn { padding: 10px 24px; border: 1px solid var(--border-color); background: white; border-radius: 999px; font-weight: 600; color: var(--text-gray); cursor: pointer; transition: all 0.2s; font-size: 15px; }
+.filter-btn:hover { border-color: var(--primary-red); color: var(--primary-red); box-shadow: 0 2px 4px rgba(185, 28, 28, 0.1); }
+.filter-btn.active { background: var(--primary-red); color: white; border-color: var(--primary-red); box-shadow: 0 4px 6px rgba(185, 28, 28, 0.2); }
+
+/* Learning Split Layout */
+.learning-container { display: flex; gap: 24px; align-items: flex-start; }
+
+/* Left Section: Video (70%) */
+.video-section { flex: 7; background: white; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 6px rgba(0,0,0,0.05); border: 1px solid var(--border-color); }
+.video-wrapper { position: relative; padding-bottom: 56.25%; height: 0; background: #000; }
+.video-wrapper iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; z-index: 2; }
+.video-placeholder { position: absolute; top: 0; left: 0; width: 100%; height: 100%; display: flex; flex-direction: column; justify-content: center; align-items: center; background: #111; color: #fff; z-index: 1; text-align: center; padding: 20px; }
+.video-info { padding: 24px; }
+.video-info h2 { font-size: 20px; font-weight: 700; margin-bottom: 8px; color: #111; }
+.video-info p { font-size: 14px; line-height: 1.6; }
+
+/* Right Section: Playlist (30%) */
+.playlist-section { flex: 3; background: white; border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.05); border: 1px solid var(--border-color); display: flex; flex-direction: column; max-height: calc(100vh - 180px); }
+.playlist-title { padding: 16px 20px; border-bottom: 1px solid var(--border-color); font-size: 16px; font-weight: 700; background: #fdfdfd; border-radius: 12px 12px 0 0; }
+.course-list { overflow-y: auto; flex: 1; }
+
+.course-item { border-bottom: 4px solid var(--bg-main); }
+.course-header { padding: 14px 20px; background: #fafafa; font-weight: 600; font-size: 15px; color: #111; border-bottom: 1px solid var(--border-color); }
+.chapter-header { padding: 12px 20px; background: white; font-weight: 600; font-size: 14px; color: #374151; display: flex; justify-content: space-between; align-items: center; cursor: pointer; border-bottom: 1px solid #f3f4f6;}
+.chapter-header:hover { background: #f9fafb; }
+.chapter-header i { font-size: 12px; transition: transform 0.3s; color: #9ca3af; }
+.chapter-item.collapsed .chapter-header i { transform: rotate(-90deg); }
+.chapter-body { display: block; overflow: hidden; }
+.chapter-item.collapsed .chapter-body { display: none; }
+.lesson-item { padding: 12px 20px 12px 40px; display: flex; align-items: center; gap: 12px; font-size: 14px; color: #4b5563; cursor: pointer; transition: all 0.2s; border-bottom: 1px solid #f9fafb; background: white; }
+.lesson-item:hover { background: var(--hover-red); }
+.lesson-item.active { background: var(--primary-red); color: white; font-weight: 600; }
+.lesson-item i { color: #9ca3af; font-size: 14px; }
+.lesson-item.active i { color: white; }
+
+/* Custom Scrollbar for Playlist */
+.course-list::-webkit-scrollbar { width: 6px; }
+.course-list::-webkit-scrollbar-track { background: #f1f1f1; }
+.course-list::-webkit-scrollbar-thumb { background: #ccc; border-radius: 4px; }
+.course-list::-webkit-scrollbar-thumb:hover { background: #999; }
+
+@media (max-width: 1024px) {
+    .learning-container { flex-direction: column; }
+    .video-section, .playlist-section { flex: unset; width: 100%; }
+    .playlist-section { max-height: 500px; }
+}

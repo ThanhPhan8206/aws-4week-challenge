@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOLEARN - Luyện thi TSA, HSA & Đánh giá năng lực trực tuyến</title>
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="/img/utc-logo.png?v=2">
+    <!-- Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header class="header">
+        <div class="container header-container">
+            <div class="header-left">
+                <a href="#" class="logo">
+                    <span class="logo-text text-red font-black">DOLEARN</span>
+                </a>
+                <nav class="nav-menu">
+                    <a href="https://www.facebook.com/thanh.phan.258000" target="_blank" class="nav-link">Gói học
+                        tập</a>
+                </nav>
+            </div>
+
+            <div class="auth-buttons">
+                <a href="auth.html?mode=login" class="btn btn-login"
+                    style="text-decoration: none; display: flex; align-items: center; justify-content: center;">Đăng
+                    nhập</a>
+                <a href="auth.html?mode=register" class="btn btn-register"
+                    style="text-decoration: none; display: flex; align-items: center; justify-content: center;">Đăng
+                    ký</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="hero-bg-left"></div>
+        <div class="hero-bg-right"></div>
+
+        <div class="container hero-container">
+            <div class="hero-text-area">
+                <p class="hero-subtitle">Bạn sẽ được trải nghiệm <span id="typewriter-text"
+                        class="text-red font-bold"></span><span class="typewriter-cursor text-red font-bold">|</span>
+                </p>
+                <h1 class="hero-title">GIẢI PHÁP HỌC TẬP TOÀN DIỆN</h1>
+
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <span class="stat-top">NỀN TẢNG</span>
+                        <strong class="stat-main">HÀNG ĐẦU</strong>
+                        <span class="stat-bottom">LUYỆN THI ONLINE</span>
+                    </div>
+                    <div class="stat-divider"></div>
+                    <div class="stat-item">
+                        <span class="stat-top">THÀNH VIÊN</span>
+                        <strong class="stat-main">10.000+</strong>
+                        <span class="stat-bottom">ĐÃ THAM GIA</span>
+                    </div>
+                    <div class="stat-divider"></div>
+                    <div class="stat-item">
+                        <span class="stat-top">KHÓA HỌC</span>
+                        <strong class="stat-main">TOÀN QUỐC</strong>
+                        <span class="stat-bottom">HỌC ONLINE</span>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </section>
+
+    <!-- Hall of Fame Section (Đại lộ danh vọng) -->
+    <section class="fame-section">
+        <div class="container fame-container">
+            <div class="fame-left">
+                <div class="fame-title-wrap">
+                    <span class="fame-title-top">ĐẠI LỘ</span>
+                    <h2 class="fame-title-bottom blink-text">DANH VỌNG</h2>
+                </div>
+                <p class="fame-desc fade-in-out-text">Thủ khoa, á khoa và top đầu các kỳ thi <strong>TSA, HSA, tốt
+                        nghiệp THPT</strong>
+                    đều có học sinh DOLEARN. Gương mặt tiếp theo trên bảng vàng có thể là bạn!</p>
+                <button href="https://www.facebook.com/thanh.phan.258000" target="_blank"
+                    class="btn btn-white btn-lg">Xem khoá luyện thi</button>
+            </div>
+
+            <div class="fame-right">
+                <div class="student-grid">
+                    <div class="student-card">
+                        <div class="student-header">
+                            <img src="/img/tsa-logo.jpg" alt="TSA" class="exam-logo">
+                            <span class="logo-text-small text-red">DOLEARN</span>
+                        </div>
+                        <div class="student-photo"><i class="fa-solid fa-user-tie"></i></div>
+                        <div class="student-info">
+                            <div class="student-rank">THỦ KHOA ĐỢT 1</div>
+                            <div class="student-name">Nguyễn Văn A</div>
+                        </div>
+                    </div>
+                    <div class="student-card">
+                        <div class="student-header">
+                            <img src="/img/tsa-logo.jpg" alt="TSA" class="exam-logo">
+                            <span class="logo-text-small text-red">DOLEARN</span>
+                        </div>
+                        <div class="student-photo"><i class="fa-solid fa-user-tie"></i></div>
+                        <div class="student-info">
+                            <div class="student-rank">THỦ KHOA ĐỢT 2</div>
+                            <div class="student-name">Nguyễn Văn B</div>
+                        </div>
+                    </div>
+                    <div class="student-card">
+                        <div class="student-header">
+                            <img src="/img/tsa-logo.jpg" alt="TSA" class="exam-logo">
+                            <span class="logo-text-small text-red">DOLEARN</span>
+                        </div>
+                        <div class="student-photo"><i class="fa-solid fa-user-tie"></i></div>
+                        <div class="student-info">
+                            <div class="student-rank">THỦ KHOA ĐỢT 3</div>
+                            <div class="student-name">Nguyễn Văn C</div>
+                        </div>
+                    </div>
+                    <div class="student-card">
+                        <div class="student-header">
+                            <img src="/img/hsa-logo.png" alt="HSA" class="exam-logo">
+                            <span class="logo-text-small text-red">DOLEARN</span>
+                        </div>
+                        <div class="student-photo"><i class="fa-solid fa-user-tie"></i></div>
+                        <div class="student-info">
+                            <div class="student-rank">THỦ KHOA ĐỢT 1</div>
+                            <div class="student-name">Nguyễn Văn D</div>
+                        </div>
+                    </div>
+                    <div class="student-card">
+                        <div class="student-header">
+                            <img src="/img/hsa-logo.png" alt="HSA" class="exam-logo">
+                            <span class="logo-text-small text-red">DOLEARN</span>
+                        </div>
+                        <div class="student-photo"><i class="fa-solid fa-user-tie"></i></div>
+                        <div class="student-info">
+                            <div class="student-rank">THỦ KHOA ĐỢT 2</div>
+                            <div class="student-name">Nguyễn Văn E</div>
+                        </div>
+                    </div>
+                    <div class="student-card">
+                        <div class="student-header">
+                            <img src="/img/hsa-logo.png" alt="HSA " class="exam-logo">
+                            <span class="logo-text-small text-red">DOLEARN</span>
+                        </div>
+                        <div class="student-photo"><i class="fa-solid fa-user-tie"></i></div>
+                        <div class="student-info">
+                            <div class="student-rank">THỦ KHOA ĐỢT 3</div>
+                            <div class="student-name">Nguyễn Văn F</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Courses Section -->
+    <section class="courses-section">
+        <div class="container">
+            <div class="courses-header">
+                <div class="courses-title-area">
+                    <h2 class="courses-main-title">KHOÁ <span class="bg-red-tag">LUYỆN THI</span></h2>
+                    <p class="courses-desc">Lộ trình riêng cho từng kỳ thi — <strong>TSA, ĐGNL</strong> và
+                        <strong>THPT</strong> — từ nền tảng, chuyên đề đến luyện đề.
+                    </p>
+                </div>
+                <button class="btn btn-outline-dark btn-lg">Xem tất cả khoá học</button>
+            </div>
+
+            <!-- Category 1: TSA -->
+            <div class="course-category">
+                <div class="category-header">
+                    <h3 class="category-title bg-red-tag round">KHOÁ HỌC TSA</h3>
+                    <div class="category-nav">
+                        <a href="#" class="view-all">Xem tất cả</a>
+                        <button class="nav-btn"><i class="fa-solid fa-chevron-left"></i></button>
+                        <button class="nav-btn"><i class="fa-solid fa-chevron-right"></i></button>
+                    </div>
+                </div>
+                <div class="courses-carousel">
+                    <!-- Course Card 1 -->
+                    <div class="course-card">
+                        <div class="course-img">
+                            <div class="course-placeholder">
+                                <div class="course-badge text-red">KHÓA LUYỆN ĐỀ TSA - TINH TÚ</div>
+                                <i class="fa-solid fa-book-open text-red fa-3x"></i>
+                            </div>
+                        </div>
+                        <div class="course-info border-red">
+                            <h4 class="course-name">[2K9 - TSA] KHOÁ LUYỆN ĐỀ TINH TÚ</h4>
+                            <div class="course-teacher"><i class="fa-regular fa-user"></i> Giáo viên DOLEARN</div>
+                        </div>
+                    </div>
+                    <!-- Course Card 2 -->
+                    <div class="course-card">
+                        <div class="course-img">
+                            <div class="course-placeholder">
+                                <div class="course-badge text-blue">CẨM NANG ĐÁNH GIÁ TƯ DUY - ĐHBKHN</div>
+                                <i class="fa-solid fa-book text-blue fa-3x"></i>
+                            </div>
+                        </div>
+                        <div class="course-info border-red">
+                            <h4 class="course-name">[2K9 - TSA] CẨM NANG TSA HUST</h4>
+                            <div class="course-teacher"><i class="fa-regular fa-user"></i> Giáo viên DOLEARN</div>
+                        </div>
+                    </div>
+                    <!-- Course Card 3 -->
+                    <div class="course-card">
+                        <div class="course-img">
+                            <div class="course-placeholder">
+                                <div class="course-badge text-red">DOLEARN - TSA</div>
+                                <i class="fa-solid fa-chalkboard-user text-red fa-3x"></i>
+                            </div>
+                        </div>
+                        <div class="course-info border-red">
+                            <h4 class="course-name">[2K9 TSA] NÂNG CAO: TOÁN</h4>
+                            <div class="course-teacher"><i class="fa-regular fa-user"></i> Giáo viên DOLEARN</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Category 2: ĐGNL -->
+            <div class="course-category mt-50">
+                <div class="category-header">
+                    <h3 class="category-title bg-green-tag round">KHOÁ HỌC ĐGNL</h3>
+                    <div class="category-nav">
+                        <a href="#" class="view-all">Xem tất cả</a>
+                        <button class="nav-btn"><i class="fa-solid fa-chevron-left"></i></button>
+                        <button class="nav-btn"><i class="fa-solid fa-chevron-right"></i></button>
+                    </div>
+                </div>
+                <div class="courses-carousel">
+                    <!-- Course Card 4 -->
+                    <div class="course-card">
+                        <div class="course-img">
+                            <div class="course-placeholder">
+                                <div class="course-badge text-green">DOLEARN - ĐGNL</div>
+                                <i class="fa-solid fa-flask text-green fa-3x"></i>
+                            </div>
+                        </div>
+                        <div class="course-info border-green">
+                            <h4 class="course-name">[2K9 - ĐGNL] CHUYÊN ĐỀ HOÁ HỌC</h4>
+                            <div class="course-teacher"><i class="fa-regular fa-user"></i> Giáo viên DOLEARN</div>
+                        </div>
+                    </div>
+                    <!-- Course Card 5 -->
+                    <div class="course-card">
+                        <div class="course-img">
+                            <div class="course-placeholder">
+                                <div class="course-badge text-green">DOLEARN - ĐGNL</div>
+                                <i class="fa-solid fa-atom text-green fa-3x"></i>
+                            </div>
+                        </div>
+                        <div class="course-info border-green">
+                            <h4 class="course-name">[2K9 - ĐGNL] CHUYÊN ĐỀ VẬT LÝ</h4>
+                            <div class="course-teacher"><i class="fa-regular fa-user"></i> Giáo viên DOLEARN</div>
+                        </div>
+                    </div>
+                    <!-- Course Card 6 -->
+                    <div class="course-card">
+                        <div class="course-img">
+                            <div class="course-placeholder">
+                                <div class="course-badge text-green">DOLEARN - ĐGNL</div>
+                                <i class="fa-solid fa-dna text-green fa-3x"></i>
+                            </div>
+                        </div>
+                        <div class="course-info border-green">
+                            <h4 class="course-name">[2K9 - ĐGNL] CHUYÊN ĐỀ SINH HỌC</h4>
+                            <div class="course-teacher"><i class="fa-regular fa-user"></i> Giáo viên DOLEARN</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Info Section (Tìm hiểu kỳ thi) -->
+    <section class="info-section">
+        <div class="container">
+            <div class="info-header">
+                <h2 class="info-title">TÌM HIỂU <span class="bg-white-tag text-red blink-text">KỲ THI</span></h2>
+                <p class="info-desc fade-in-text">Cấu trúc đề, cách tính điểm, quy trình đăng ký — nắm rõ luật chơi
+                    trước<br>khi bước
+                    vào phòng thi.</p>
+            </div>
+
+            <div class="info-grid">
+                <!-- Card 1 -->
+                <div class="info-card">
+                    <span class="info-badge">ĐÁNH GIÁ TƯ DUY - TSA</span>
+                    <h4 class="info-card-title">Kỳ thi Đánh giá tư duy TSA: toàn bộ thông tin cần biết</h4>
+                    <p class="info-card-desc">TSA là gì, bài thi đánh giá những gì, thi trên máy hay trên giấy, kết quả
+                        dùng xét tuyển vào trường nào. Tổng hợp từ nguồn chính thức của ĐH Bách Khoa Hà Nội.</p>
+                    <a href="#" class="info-link">Đọc tiếp <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+                <!-- Card 2 -->
+                <div class="info-card">
+                    <span class="info-badge">ĐÁNH GIÁ TƯ DUY - TSA</span>
+                    <h4 class="info-card-title">Cấu trúc đề thi TSA: 3 phần, 100 câu, 150 phút</h4>
+                    <p class="info-card-desc">Đề thi TSA gồm 3 phần: Tư duy Toán học 60 phút, Tư duy Đọc hiểu 30 phút,
+                        Tư duy Khoa học 60 phút. Chi tiết nội dung, 5 dạng câu hỏi và 3 mức độ.</p>
+                    <a href="#" class="info-link">Đọc tiếp <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+                <!-- Card 3 -->
+                <div class="info-card">
+                    <span class="info-badge">ĐÁNH GIÁ TƯ DUY - TSA</span>
+                    <h4 class="info-card-title">Cách tính điểm TSA: vì sao làm đúng nhiều câu chưa chắc điểm cao</h4>
+                    <p class="info-card-desc">Điểm TSA không phải điểm thô. Bách Khoa chấm bằng mô hình IRT 2 tham số
+                        rồi quy về thang 100. Giải thích quy trình 4 bước và vì sao điểm các đợt thi được làm tròn.</p>
+                    <a href="#" class="info-link">Đọc tiếp <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+                <!-- Card 4 -->
+                <div class="info-card">
+                    <span class="info-badge">ĐÁNH GIÁ NĂNG LỰC - HSA</span>
+                    <h4 class="info-card-title">Kỳ thi Đánh giá năng lực HSA của ĐHQG Hà Nội</h4>
+                    <p class="info-card-desc">HSA là gì, ai tổ chức, thi trên máy tính ra sao, một năm được thi mấy
+                        lượt, kết quả dùng xét tuyển vào bao nhiêu trường. Tổng hợp từ nguồn chính thức.</p>
+                    <a href="#" class="info-link">Đọc tiếp <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+                <!-- Card 5 -->
+                <div class="info-card">
+                    <span class="info-badge">ĐÁNH GIÁ NĂNG LỰC - HSA</span>
+                    <h4 class="info-card-title">Cấu trúc đề thi HSA 2026: 3 phần, 150 câu, 195 phút</h4>
+                    <p class="info-card-desc">Đề HSA gồm Toán 50 câu 75 phút, Văn học Ngôn ngữ 50 câu 60 phút và phần tự
+                        chọn Khoa học hoặc Tiếng Anh 50 câu 60 phút. Thang 150 điểm.</p>
+                    <a href="#" class="info-link">Đọc tiếp <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+                <!-- Card 6 -->
+                <div class="info-card">
+                    <span class="info-badge">ĐÁNH GIÁ NĂNG LỰC - HSA</span>
+                    <h4 class="info-card-title">Đăng ký thi HSA: quy trình 8 bước và những mốc để trượt</h4>
+                    <p class="info-card-desc">Hướng dẫn đăng ký thi Đánh giá năng lực HSA: 8 bước trên hệ thống, giấy tờ
+                        và ảnh cần chuẩn bị, hạn nộp lệ phí 96 giờ, tối đa 2 ca thi mỗi năm.</p>
+                    <a href="#" class="info-link">Đọc tiếp <i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-bg-left"></div>
+        <div class="footer-bg-right"></div>
+        <div class="container footer-container">
+            <div class="footer-col brand-col">
+                <div class="logo-group">
+                    <span class="logo-text-large text-yellow">DOLEARN</span>
+                </div>
+                <div class="brand-subtitle">HỆ THỐNG GIÁO DỤC TRỰC TUYẾN DOLEARN</div>
+                <ul class="contact-list">
+                    <li><i class="fa-solid fa-location-dot"></i> số 3 phố Cầu Giấy, phường Láng Thượng, quận Đống Đa,
+                        thành phố Hà Nội.</li>
+                    <li><i class="fa-solid fa-envelope"></i> phanhuuthanh8206@gmail.com</li>
+                    <li><i class="fa-solid fa-phone"></i> 0123 456 789</li>
+                    <li><i class="fa-brands fa-facebook"></i> Fanpage DOLEARN</li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>THÔNG TIN</h4>
+                <ul>
+                    <li><a href="#">Điều Khoản Dịch Vụ</a></li>
+                    <li><a href="#">Bảo Mật Thông Tin</a></li>
+                    <li><a href="#">Điều Kiện Hạn Chế Cung Cấp</a></li>
+                    <li><a href="#">Quyền & Nghĩa Vụ Hai Bên</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>CHÍNH SÁCH</h4>
+                <ul>
+                    <li><a href="#">Thanh Toán</a></li>
+                    <li><a href="#">Giá Dịch Vụ</a></li>
+                    <li><a href="#">Vận Chuyển & Đổi Trả</a></li>
+                    <li><a href="#">Khiếu Nại & Phản Ánh</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h4>THÔNG TIN TRA CỨU</h4>
+                <ul>
+                    <li>Hộ kinh doanh DOLEARN EDU</li>
+                    <li>UBND Phường Cầu Giấy cấp ngày 17/07/2026</li>
+                </ul>
+            </div>
+        </div>
+        <div class="container footer-bottom">
+            <p>&copy; 2026 Bản quyền thuộc về Hệ thống Khảo thí DOLEARN.</p>
+        </div>
+        <script src="script.js"></script>
+        <!-- Floating Contact Menu -->
+        <div class="floating-contact">
+            <a href="https://www.facebook.com/thanh.phan.258000" target="_blank" class="contact-icon zalo">
+                <span class="zalo-text">Zalo</span>
+            </a>
+            <a href="https://www.facebook.com/thanh.phan.258000" target="_blank" class="contact-icon messenger">
+                <i class="fa-brands fa-facebook-messenger"></i>
+            </a>
+            <a href="https://www.facebook.com/thanh.phan.258000" target="_blank" class="contact-icon facebook">
+                <i class="fa-brands fa-facebook-f"></i>
+            </a>
+            <a href="https://www.facebook.com/thanh.phan.258000" target="_blank" class="contact-icon phone">
+                <i class="fa-solid fa-phone"></i>
+            </a>
+        </div>
+</body>
+
+</html>
