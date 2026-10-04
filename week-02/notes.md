@@ -22,7 +22,7 @@ Kiến trúc mạng được thiết kế theo nguyên tắc Network Isolation �
 3. NAT Gateway thay mặt App Server đẩy request ra ngoài thông qua **Internet Gateway (IGW)**.
 4. Gói tin ra tới Internet, lấy dữ liệu và trả về theo luồng ngược lại.
 
----
+-----
 
 ## 2. Security Group Configuration
 
