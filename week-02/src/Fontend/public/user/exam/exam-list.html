@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Danh sách Đề thi - DOLEARN</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="exam.css">
+</head>
+<body>
+    <header class="header">
+        <div class="header-left">
+            <a href="/user/dashboard.html" class="back-btn">
+                <i class="fa-solid fa-arrow-left"></i>
+                <span>Quay lại Dashboard</span>
+            </a>
+            <div class="logo-text">DO<span class="text-red">LEARN</span></div>
+        </div>
+        <div class="header-right">
+            <div class="user-profile">
+                <span class="user-name">Học viên</span>
+                <i class="fa-solid fa-user"></i>
+            </div>
+        </div>
+    </header>
+
+    <main class="main-content" style="padding: 0;">
+        <div class="exam-color-header">
+            <div class="page-view header-flex">
+                <h2>BÀI THI ĐÁNH GIÁ TƯ DUY - TSA</h2>
+            </div>
+        </div>
+
+        <div class="exam-color-content">
+            <div class="page-view">
+                <div class="exam-grid-alt" id="exam-list-container">
+                    <!-- Dữ liệu render từ JS -->
+                    <div style="text-align: center; color: #777; grid-column: 1 / -1;">Đang tải danh sách đề thi...</div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="exam.js"></script>
+</body>
+</html>
