@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Làm bài thi - DOLEARN</title>
+    <meta name="description" content="Làm bài thi Đánh giá Tư duy TSA trực tuyến.">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script>
+        window.MathJax = { tex: { inlineMath: [['$', '$'], ['\\(', '\\)']] }, svg: { fontCache: 'global' } };
+    </script>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <link rel="stylesheet" href="exam.css">
+    <link rel="stylesheet" href="exam-take.css">
+</head>
+<body class="tk-body">
+    <!-- Header -->
+    <header class="tk-header">
+        <div class="tk-logo">TSA</div>
+        <h1 class="tk-title" id="take-exam-title">Đang tải đề thi...</h1>
+    </header>
+
+    <div class="tk-layout">
+        <!-- Cột trái: câu hỏi -->
+        <section class="tk-main">
+            <div class="tk-question-card">
+                <div class="tk-watermark" id="tk-watermark"></div>
+                <div class="tk-question-scroll" id="question-container">
+                    <div class="tk-loading">Đang tải nội dung đề thi...</div>
+                </div>
+            </div>
+
+            <nav class="tk-nav">
+                <button class="tk-btn tk-btn-navy" id="btn-prev"><i class="fa-solid fa-chevron-left"></i> Câu trước</button>
+                <div class="tk-nav-time">Thời gian hiện tại <strong id="real-time">00:00</strong></div>
+                <div class="tk-nav-right">
+                    <div class="tk-nav-time">Thời gian còn lại <strong id="time-remaining">00:00:00</strong></div>
+                    <button class="tk-btn tk-btn-navy" id="btn-next">Câu tiếp <i class="fa-solid fa-chevron-right"></i></button>
+                    <button class="tk-btn tk-btn-red" id="btn-menu-submit"><i class="fa-solid fa-chevron-left"></i> Mở menu / Nộp bài</button>
+                </div>
+            </nav>
+        </section>
+
+        <!-- Cột phải: thông tin + danh sách câu -->
+        <div id="tk-global-overlay" class="tk-global-overlay"></div>
+        <aside class="tk-sidebar" id="tk-sidebar">
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+                <h2 class="tk-side-heading">Thông tin thí sinh</h2>
+                <button id="btn-close-sidebar" style="display: none; background: none; border: none; font-size: 18px; cursor: pointer; color: #374151;"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+            <div class="tk-panel" style="padding: 16px;">
+                <div class="tk-user" style="font-size: 15px; margin-bottom: 20px;">Họ tên: <strong id="sidebar-user-name" style="font-size: 16px;">Người dùng</strong></div>
+                <div class="tk-timer-row" style="display: flex; align-items: center; justify-content: space-between; margin-top: 10px; gap: 15px;">
+                    <div style="font-size: 13px; color: #6b7280; max-width: 80px; line-height: 1.3;">Thời gian còn lại</div>
+                    <strong id="sidebar-timer" style="font-size: 18px; color: #111; font-family: 'Inter', sans-serif;">00:00:00</strong>
+                    <button class="tk-btn tk-btn-red" id="btn-submit" style="padding: 12px 18px; font-size: 16px; font-weight: 700; border-radius: 6px; text-align: center; line-height: 1.2;">Nộp<br>bài</button>
+                </div>
+            </div>
+
+            <div class="tk-panel tk-palette-panel">
+                <div class="tk-palette-title">Danh sách câu hỏi</div>
+                <div class="tk-legend">
+                    <span><i class="dot dot-current"></i> Hiện tại</span>
+                    <span><i class="dot dot-done"></i> Đã trả lời</span>
+                    <span><i class="dot dot-flag"></i> Đánh dấu</span>
+                    <span><i class="dot dot-todo"></i> Chưa chọn</span>
+                </div>
+                <div class="tk-palette-grid" id="palette-grid"></div>
+            </div>
+
+            <div class="tk-panel tk-progress">
+                <div class="tk-progress-row">
+                    <span>Bạn đã hoàn thành</span>
+                    <span><strong id="progress-count">0/0</strong> câu</span>
+                </div>
+                <div class="tk-progress-bg"><div class="tk-progress-fill" id="progress-bar-fill"></div></div>
+                <div class="tk-progress-pct" id="progress-pct">0%</div>
+            </div>
+        </aside>
+    </div>
+
+    <!-- Modal Fullscreen (thiết kế giống trang xác nhận) -->
+    <div class="modal-overlay fs-overlay" id="fullscreen-modal">
+        <div class="fs-box">
+            <div class="brand">
+                <span class="brand-mark">TSA</span>
+                <div class="brand-text">
+                    <small>ĐẠI HỌC BÁCH KHOA HÀ NỘI</small>
+                    <strong>KỲ THI ĐÁNH GIÁ TƯ DUY</strong>
+                </div>
+            </div>
+
+            <h2 class="fs-title">Bắt đầu bài kiểm tra</h2>
+            <p class="fs-desc"><i class="fa-solid fa-expand"></i> Bạn cần bật chế độ toàn màn hình để bắt đầu làm bài.</p>
+            <p class="fs-note"><i class="fa-solid fa-triangle-exclamation"></i> <span><strong>Lưu ý:</strong> Nếu bạn thoát khỏi chế độ toàn màn hình, bài kiểm tra sẽ tự động nộp bài.</span></p>
+
+            <button class="fs-btn" id="btn-enter-fullscreen"><i class="fa-regular fa-circle-play"></i> Bắt đầu toàn màn hình</button>
+        </div>
+    </div>
+
+    <script src="exam.js"></script>
+</body>
+</html>

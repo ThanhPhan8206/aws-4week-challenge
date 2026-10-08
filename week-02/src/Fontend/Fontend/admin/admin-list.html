@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quản lý đề thi TSA - Admin</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="admin.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <style>
+        .table-wrapper { background: white; border: 1px solid var(--border-color); border-radius: 8px; overflow: hidden; box-shadow: 0 1px 3px rgba(0,0,0,0.05); margin-top: 20px;}
+        table { width: 100%; border-collapse: collapse; text-align: left; }
+        th, td { padding: 14px 20px; border-bottom: 1px solid var(--border-color); vertical-align: middle;}
+        th { background: #f9fafb; font-weight: 600; color: #374151; font-size: 14px; text-transform: uppercase; }
+        tbody tr:hover { background: #f3f4f6; }
+        .status-badge { padding: 6px 12px; border-radius: 999px; font-size: 12px; font-weight: 500; display: inline-block;}
+        .status-active { background: #def7ec; color: #03543f; }
+        .status-inactive { background: #fde8e8; color: #9b1c1c; }
+        .detail-icon { cursor: pointer; color: #3b82f6; font-size: 16px; transition: color 0.2s;}
+        .detail-icon:hover { color: #2563eb; }
+        .tooltip-container { position: relative; display: inline-block; }
+        .tooltip-container .tooltip-text {
+            visibility: hidden; width: max-content; background-color: #1f2937; color: #fff; text-align: center;
+            border-radius: 6px; padding: 8px 12px; position: absolute; z-index: 10;
+            bottom: 125%; left: 50%; transform: translateX(-50%); opacity: 0; transition: opacity 0.2s;
+            font-size: 13px; font-weight: 500; pointer-events: none; box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        .tooltip-container .tooltip-text::after {
+            content: ""; position: absolute; top: 100%; left: 50%; margin-left: -5px;
+            border-width: 5px; border-style: solid; border-color: #1f2937 transparent transparent transparent;
+        }
+        .tooltip-container:hover .tooltip-text { visibility: visible; opacity: 1; }
+    </style>
+</head>
+<body>
+    <div class="admin-layout">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-logo">
+                <h2>ADMIN <span class="text-red">TSA</span></h2>
+            </div>
+            <nav class="sidebar-nav">
+                <a href="admin-list.html" class="nav-item active"><i class="fa-solid fa-list-check"></i> Quản lý đề thi</a>
+                <a href="admin-exam.html" class="nav-item"><i class="fa-solid fa-file-pen"></i> Tạo đề thi TSA</a>
+                <a href="admin-list-course.html" class="nav-item"><i class="fa-solid fa-layer-group"></i> Quản lý khóa học</a>
+                <a href="admin-course.html" class="nav-item"><i class="fa-solid fa-book-open"></i> Tạo khóa học</a>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <div class="header-action" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 24px;">
+                <h1 class="page-title" style="margin-bottom: 0;">Danh sách Đề Thi Đánh Giá Tư Duy</h1>
+                <a href="admin-exam.html" class="btn-primary" style="text-decoration: none;"><i class="fa-solid fa-plus"></i> Tạo đề mới</a>
+            </div>
+
+            <!-- Table -->
+            <div class="table-wrapper">
+                <table id="exam-table">
+                    <thead>
+                        <tr>
+                            <th width="5%">STT</th>
+                            <th width="12%">Mã Đề</th>
+                            <th width="23%">Tên Đề Thi</th>
+                            <th width="10%">Loại Đề</th>
+                            <th width="10%">Chi Tiết</th>
+                            <th width="15%">Ngày Tạo</th>
+                            <th width="10%">Trạng Thái</th>
+                            <th width="15%">Hành Động</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Dữ liệu render từ JS -->
+                        <tr><td colspan="7" style="text-align:center; padding: 20px;">Đang tải dữ liệu...</td></tr>
+                    </tbody>
+                </table>
+            </div>
+        </main>
+    </div>
+    <script src="admin-list.js"></script>
+</body>
+</html>

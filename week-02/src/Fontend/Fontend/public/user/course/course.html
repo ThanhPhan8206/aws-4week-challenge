@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Khóa Học - DOLEARN</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="course.css">
+</head>
+<body>
+    <!-- Header thu gọn -->
+    <header class="header">
+        <div class="header-left">
+            <a href="/user/dashboard.html" class="back-btn">
+                <i class="fa-solid fa-arrow-left"></i>
+                <span>Quay lại Dashboard</span>
+            </a>
+            <div class="logo-text">DO<span class="text-red">LEARN</span></div>
+        </div>
+        <div class="header-right">
+            <div class="user-profile">
+                <span class="user-name">Học viên</span>
+                <i class="fa-solid fa-user"></i>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="main-content" style="padding: 0;">
+        <div class="course-color-header">
+            <h2>KHÓA HỌC LUYỆN THI ĐÁNH GIÁ TƯ DUY - TSA</h2>
+        </div>
+        <div class="page-view" style="padding: 0 20px 30px;">
+            
+            <!-- Filter Tabs -->
+            <div class="filter-tabs">
+                <button class="filter-btn active" data-filter="Toán Học"><i class="fa-solid fa-square-root-variable"></i> Toán Học</button>
+                <button class="filter-btn" data-filter="Đọc Hiểu"><i class="fa-solid fa-book"></i> Đọc Hiểu</button>
+                <button class="filter-btn" data-filter="Khoa Học"><i class="fa-solid fa-flask"></i> Khoa Học</button>
+            </div>
+
+            <!-- Learning Split Layout -->
+            <div class="learning-container">
+                <!-- Left: Video Player (70%) -->
+                <div class="video-section">
+                    <div class="video-wrapper">
+                        <iframe id="video-player" src="" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        <div id="video-placeholder" class="video-placeholder">
+                            <i class="fa-brands fa-youtube" style="font-size: 48px; color: var(--primary-red); margin-bottom: 16px;"></i>
+                            <h3>Hãy chọn một bài học ở danh sách bên cạnh để bắt đầu</h3>
+                        </div>
+                    </div>
+                    <div class="video-info">
+                        <h2 id="current-lesson-title">Chưa chọn bài học</h2>
+                        <p id="current-course-desc" class="text-gray">Vui lòng chọn khóa học và bài học từ menu bên phải.</p>
+                    </div>
+                </div>
+
+                <!-- Right: Playlist (30%) -->
+                <div class="playlist-section">
+                    <h3 class="playlist-title">Nội dung bài học</h3>
+                    <div id="course-list-container" class="course-list">
+                        <!-- Dữ liệu render từ JS -->
+                        <div style="text-align:center; padding: 20px; color: #666;">Đang tải dữ liệu...</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="course.js"></script>
+</body>
+</html>
