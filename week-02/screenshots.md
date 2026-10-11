@@ -3,11 +3,15 @@
 
 ## Deploy Frontend Nginx ở Public Subnet.
 ***Ảnh 1***
-<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/e941c603-b272-4d77-ba83-4c676b298b73" />
+<img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/f2151a5a-58ed-4730-9642-b50a09021279" />
+
 ***Ảnh 2***
-<img width="1540" height="672" alt="image" src="https://github.com/user-attachments/assets/e2d497e1-1b32-48dc-b3a6-99131536d0ff" />
+<img width="1302" height="221" alt="image" src="https://github.com/user-attachments/assets/a9fc22a1-6a75-4ef1-8e49-8c0adbf80b65" />
+
 ***Ảnh 3***
-<img width="1917" height="831" alt="image" src="https://github.com/user-attachments/assets/26cb8631-0ef0-4aff-bacb-b601494fe4ed" />
+<img width="1917" height="967" alt="image" src="https://github.com/user-attachments/assets/bdf26910-7489-4f99-9114-374a1d22f9aa" />
+
+
 
 
 
