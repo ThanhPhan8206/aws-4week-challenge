@@ -1,5 +1,6 @@
 # Ảnh minh chứng
-[***Ảnh***](https://drive.google.com/drive/folders/1LL2YJltmah7scm46lUfc_axKX4e9Q9xV)
+## <a href="https://google.com" style="color: #FF0000; font-weight: bold;">📸 Xem Ảnh</a>
+
 ## Deploy Frontend Nginx ở Public Subnet.
 ***Ảnh 1***
 <img width="1920" height="1080" alt="image" src="https://github.com/user-attachments/assets/e941c603-b272-4d77-ba83-4c676b298b73" />
