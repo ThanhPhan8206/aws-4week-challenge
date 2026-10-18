@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tạo Khóa Học - Admin</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="admin.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <style>
+        .chapter-card { background: white; border: 1px solid var(--border-color); border-radius: 8px; margin-bottom: 20px; box-shadow: 0 1px 3px rgba(0,0,0,0.05); }
+        .chapter-header { background: #fdfdfd; padding: 14px 20px; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--border-color); border-radius: 8px 8px 0 0; }
+        .chapter-body { padding: 24px; }
+        .chapter-card.collapsed .chapter-body { display: none; }
+        .chapter-card.collapsed .chapter-header { border-bottom: none; border-radius: 8px; }
+        .lesson-card { background: #fafafa; border: 1px solid #eee; padding: 16px; border-radius: 6px; margin-bottom: 16px; position: relative; }
+        .lesson-header { display: flex; justify-content: space-between; margin-bottom: 12px; align-items: center; border-bottom: 1px dashed #eee; padding-bottom: 8px; }
+    </style>
+</head>
+<body>
+    <div class="admin-layout">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="sidebar-logo">
+                <h2>ADMIN <span class="text-red">TSA</span></h2>
+            </div>
+            <nav class="sidebar-nav">
+                <a href="admin-list.html" class="nav-item"><i class="fa-solid fa-list-check"></i> Quản lý đề thi</a>
+                <a href="admin-exam.html" class="nav-item"><i class="fa-solid fa-file-pen"></i> Tạo đề thi TSA</a>
+                <a href="admin-list-course.html" class="nav-item"><i class="fa-solid fa-layer-group"></i> Quản lý khóa học</a>
+                <a href="admin-course.html" class="nav-item active"><i class="fa-solid fa-book-open"></i> Tạo khóa học</a>
+            </nav>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <div class="header-action">
+                <h1 class="page-title">Tạo Khóa Học Mới</h1>
+            </div>
+
+            <!-- Course Info -->
+            <div class="card">
+                <h3 class="card-title"><i class="fa-solid fa-gear"></i> Thông tin chung</h3>
+                <div class="form-group">
+                    <label class="font-semibold">Tên khóa học</label>
+                    <input type="text" id="course-name" placeholder="Nhập tên khóa học...">
+                </div>
+                <div class="form-group">
+                    <label class="font-semibold">Chọn Học Phần</label>
+                    <select id="course-part" class="form-control">
+                        <option value="">-- Vui lòng chọn học phần --</option>
+                        <option value="Toán Học">Toán Học</option>
+                        <option value="Đọc Hiểu">Đọc Hiểu</option>
+                        <option value="Khoa Học">Khoa Học</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label class="font-semibold">Mô tả khóa học</label>
+                    <textarea id="course-desc" rows="3" placeholder="Nhập mô tả tổng quan về khóa học..."></textarea>
+                </div>
+            </div>
+
+            <h3 style="margin-bottom: 16px; color: var(--primary-red);"><i class="fa-solid fa-layer-group"></i> Nội dung chương trình</h3>
+            <div id="chapters-container"></div>
+            
+            <div style="text-align: center; margin-top: 20px;">
+                <button type="button" class="btn-outline" id="btn-add-chapter"><i class="fa-solid fa-plus"></i> Thêm Chương Mới</button>
+            </div>
+
+            <!-- Save Button -->
+            <div class="footer-action">
+                <button type="button" class="btn-primary btn-lg" id="btn-save-course">
+                    <i class="fa-solid fa-floppy-disk"></i> Lưu Khóa Học
+                </button>
+            </div>
+        </main>
+    </div>
+
+    <!-- Template for Chapter -->
+    <template id="tpl-chapter">
+        <div class="chapter-card accordion">
+            <div class="chapter-header">
+                <span class="chapter-name font-semibold text-red">Chương</span>
+                <div class="chapter-actions">
+                    <button type="button" class="btn-icon toggle-chapter" title="Thu gọn/Mở rộng"><i class="fa-solid fa-chevron-down"></i></button>
+                    <button type="button" class="btn-icon text-red delete-chapter" title="Xóa chương"><i class="fa-solid fa-trash"></i></button>
+                </div>
+            </div>
+            <div class="chapter-body">
+                <div class="form-group">
+                    <label class="font-semibold">Tên chương</label>
+                    <input type="text" class="chapter-title-input" placeholder="Nhập tên chương (VD: Chương 1: Dao động cơ)...">
+                </div>
+                <div class="lessons-container" style="margin-top: 20px;"></div>
+                <button type="button" class="btn-secondary btn-add-lesson"><i class="fa-solid fa-plus"></i> Thêm Bài Học</button>
+            </div>
+        </div>
+    </template>
+
+    <!-- Template for Lesson -->
+    <template id="tpl-lesson">
+        <div class="lesson-card">
+            <div class="lesson-header">
+                <span class="lesson-idx font-semibold text-gray">Bài học</span>
+                <button type="button" class="btn-icon text-red delete-lesson" title="Xóa bài học"><i class="fa-solid fa-xmark"></i></button>
+            </div>
+            <div class="form-grid">
+                <div class="form-group">
+                    <label>Tên bài học</label>
+                    <input type="text" class="lesson-name" placeholder="Nhập tên bài học...">
+                </div>
+                <div class="form-group">
+                    <label>Link Video (YouTube/Drive)</label>
+                    <input type="text" class="lesson-link" placeholder="Nhập link video...">
+                </div>
+            </div>
+        </div>
+    </template>
+
+    <script src="admin-course.js"></script>
+</body>
+</html>
