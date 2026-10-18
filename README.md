@@ -2,9 +2,9 @@
 
 > Nền tảng thi thử trực tuyến cho kỳ thi Đánh giá tư duy (TSA) và Đánh giá năng lực (HSA), triển khai theo kiến trúc 3 tầng trên Amazon VPC, có giám sát và cảnh báo bằng Amazon CloudWatch.
 
-**Dự án:** AWS 4-Week Challenge
+**Dự án:** AWS 4-Week Challenge.
 
-**Website:** https://tsadolearn.duckdns.org/ 
+**Website:** https://tsadolearn.duckdns.org/ .
 
 ---
 
