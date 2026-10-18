@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Xác nhận thông tin dự thi - DOLEARN</title>
+    <meta name="description" content="Xác nhận thông tin trước khi bắt đầu bài thi Đánh giá Tư duy TSA.">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        :root { --primary-red: #d7262e; --primary-red-dark: #b81d24; }
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; }
+
+        body {
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            background-color: #fde8ec;
+            /* Họa tiết hình học mờ (tam giác, compa, đồng hồ, máy tính, lục giác) */
+            background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='420' height='420' fill='none' stroke='%23e9b8c2' stroke-width='1.5' opacity='0.9'><polygon points='60,30 95,90 25,90'/><circle cx='330' cy='60' r='28'/><path d='M330 40 V60 L345 70'/><rect x='40' y='250' width='50' height='70' rx='6'/><path d='M50 265 H80 M50 280 H58 M66 280 H74 M50 295 H58 M66 295 H74 M50 308 H58 M66 308 H74'/><path d='M300 230 L330 330 M300 230 L270 330 M285 280 H315'/><circle cx='300' cy='225' r='6'/><polygon points='200,150 222,163 222,189 200,202 178,189 178,163'/><polygon points='160,350 182,363 182,389 160,402 138,389 138,363'/><path d='M120 160 L150 130 L180 160'/><rect x='370' y='330' width='34' height='34' transform='rotate(20 387 347)'/></svg>");
+            background-size: 420px 420px;
+        }
+
+        .confirm-box {
+            background: white;
+            border-radius: 14px;
+            box-shadow: 0 12px 40px rgba(215, 38, 46, 0.08), 0 2px 6px rgba(0,0,0,0.04);
+            width: 100%;
+            max-width: 500px;
+            padding: 36px 40px 30px;
+            animation: popIn 0.4s ease-out;
+        }
+        @keyframes popIn { from { opacity: 0; transform: translateY(12px) scale(0.98); } to { opacity: 1; transform: none; } }
+
+        /* Logo TSA */
+        .brand { display: flex; justify-content: center; align-items: center; gap: 10px; margin-bottom: 28px; }
+        .brand-mark {
+            font-size: 56px; font-weight: 900; color: var(--primary-red);
+            letter-spacing: -1px; line-height: 1;
+            position: relative; padding-right: 18px;
+        }
+        .brand-mark::after {
+            content: ""; position: absolute; right: 0; top: 6px; bottom: 6px; width: 7px;
+            background: var(--primary-red); transform: skewX(-15deg);
+        }
+        .brand-text { display: flex; flex-direction: column; line-height: 1.2; gap: 2px; }
+        .brand-text small { font-size: 13px; color: var(--primary-red); font-weight: 600; letter-spacing: 0.3px; }
+        .brand-text strong { font-size: 19px; color: #111; font-weight: 800; letter-spacing: 0.2px; }
+
+        .confirm-title { text-align: center; font-size: 19px; font-weight: 700; color: #111; margin-bottom: 22px; }
+
+        .info-list { margin-bottom: 18px; }
+        .info-item { display: flex; align-items: center; margin-bottom: 11px; font-size: 13.5px; }
+        .info-item i { width: 22px; color: #555; font-size: 13px; }
+        .info-label { color: #555; width: 120px; }
+        .info-value { font-weight: 700; color: #111; flex: 1; }
+
+        .note-text { font-size: 13px; font-style: italic; color: #444; margin-bottom: 18px; line-height: 1.6; }
+        .note-text strong { color: #111; }
+
+        .btn-start {
+            width: 100%; background: var(--primary-red); color: white; border: none;
+            padding: 13px; border-radius: 6px; font-weight: 600; font-size: 15px; cursor: pointer;
+            display: flex; justify-content: center; align-items: center; gap: 8px; margin-bottom: 18px;
+            transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
+        }
+        .btn-start:hover { background: var(--primary-red-dark); box-shadow: 0 6px 16px rgba(215,38,46,0.3); transform: translateY(-1px); }
+        .btn-start:active { transform: translateY(0); }
+
+        .footer-links { display: flex; justify-content: space-between; }
+        .footer-links a { color: var(--primary-red); text-decoration: none; font-size: 13.5px; font-weight: 500; display: flex; align-items: center; gap: 6px; }
+        .footer-links a:hover { text-decoration: underline; }
+    </style>
+</head>
+<body>
+    <main class="confirm-box">
+        <div class="brand">
+            <span class="brand-mark">TSA</span>
+            <div class="brand-text">
+                <small>ĐẠI HỌC BÁCH KHOA HÀ NỘI</small>
+                <strong>KỲ THI ĐÁNH GIÁ TƯ DUY</strong>
+            </div>
+        </div>
+
+        <h1 class="confirm-title">Xác nhận thông tin dự thi</h1>
+
+        <div class="info-list">
+            <div class="info-item">
+                <i class="fa-regular fa-user"></i>
+                <span class="info-label">Họ tên</span>
+                <span class="info-value" id="c-name">Đang tải...</span>
+            </div>
+            <div class="info-item">
+                <i class="fa-regular fa-file-lines"></i>
+                <span class="info-label">Kíp thi</span>
+                <span class="info-value" id="c-exam">Đang tải...</span>
+            </div>
+            <div class="info-item">
+                <i class="fa-regular fa-clock"></i>
+                <span class="info-label">Thời gian làm bài</span>
+                <span class="info-value" id="c-time">-- phút</span>
+            </div>
+            <div class="info-item">
+                <i class="fa-solid fa-list-ol"></i>
+                <span class="info-label">Số lượng câu hỏi</span>
+                <span class="info-value" id="c-count">-- câu</span>
+            </div>
+        </div>
+
+        <p class="note-text">
+            Lưu ý: Bằng việc nhấn nút <strong>"Bắt đầu thi"</strong> hệ thống sẽ bắt đầu tính giờ cho bài thi của bạn
+        </p>
+
+        <button class="btn-start" id="btn-proceed">
+            <i class="fa-regular fa-circle-play"></i> Bắt đầu thi
+        </button>
+
+        <div class="footer-links">
+            <a href="/user/exam/exam-list.html" id="link-back"><i class="fa-solid fa-arrow-left"></i> Quay lại</a>
+            <a href="#" id="link-guide"><i class="fa-regular fa-circle-question"></i> Hướng dẫn</a>
+        </div>
+    </main>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const savedUser = localStorage.getItem('user_info');
+            if (savedUser) {
+                try { document.getElementById('c-name').textContent = JSON.parse(savedUser).hoTen || 'Người dùng'; } catch(e) {}
+            }
+
+            const examId = localStorage.getItem('currentExamId');
+            if (!examId) { window.location.href = '/user/exam/exam-list.html'; return; }
+
+            // Thời gian chuẩn TSA theo từng phần
+            const TIME_BY_TYPE = { ToanHoc: 60, DocHieu: 30, KhoaHoc: 60, full: 150 };
+
+            fetch(`/api/exams/${examId}`)
+                .then(res => res.json())
+                .then(result => {
+                    if (!result.success) return;
+                    const examData = result.data;
+                    document.getElementById('c-exam').textContent = examData.TenDeThi;
+                    let qCount = 0, type = 'full';
+                    try {
+                        const parsed = JSON.parse(examData.NoiDungJSON);
+                        type = parsed.examType || 'full';
+                        if (parsed.sections) {
+                            const secs = type === 'full' ? ['ToanHoc', 'DocHieu', 'KhoaHoc'] : [type];
+                            secs.forEach(s => {
+                                const p = parsed.sections[s] && parsed.sections[s].passages;
+                                if (p) qCount += p.reduce((sum, x) => sum + (x.questions ? x.questions.length : 0), 0);
+                            });
+                        } else if (parsed.questions) {
+                            qCount = parsed.questions.length;
+                        }
+                    } catch(e) {}
+                    document.getElementById('c-time').textContent = (TIME_BY_TYPE[type] || 60) + ' phút';
+                    document.getElementById('c-count').textContent = qCount + ' câu';
+                })
+                .catch(() => {
+                    document.getElementById('c-exam').textContent = 'Không tải được thông tin đề';
+                });
+
+            document.getElementById('btn-proceed').addEventListener('click', () => {
+                window.location.href = '/user/exam/exam-take.html';
+            });
+
+            document.getElementById('link-guide').addEventListener('click', (e) => {
+                e.preventDefault();
+                alert('Hướng dẫn:\n- Bài thi sẽ chạy ở chế độ toàn màn hình.\n- Thoát toàn màn hình sẽ bị tự động nộp bài.\n- Hết giờ hệ thống tự động nộp bài.');
+            });
+        });
+    </script>
+</body>
+</html>

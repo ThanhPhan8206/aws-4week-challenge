@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tổng quan - DOLEARN</title>
+    <link rel="icon" type="image/png" href="/public/img/utc-logo.png?v=2">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/dashboard.css?v=2">
+</head>
+
+<body>
+    <!-- Sidebar -->
+    <aside class="sidebar" id="sidebar">
+        <div class="sidebar-logo">
+            <h1 class="logo-text">DO<span class="text-red">LEARN</span></h1>
+        </div>
+        <nav class="sidebar-nav">
+            <a href="#" class="nav-item active" data-target="view-dashboard">
+                <i class="fa-solid fa-border-all"></i>
+                <span>Tổng quan</span>
+            </a>
+            <a href="/user/course/course.html" class="nav-item">
+                <i class="fa-solid fa-book"></i>
+                <span>Khóa học</span>
+            </a>
+            <a href="/user/exam/exam-list.html" class="nav-item">
+                <i class="fa-solid fa-chart-line"></i>
+                <span>Bài thi IRT</span>
+            </a>
+            <a href="#" class="nav-item" data-target="view-history">
+                <i class="fa-solid fa-clock-rotate-left"></i>
+                <span>Lịch sử thi</span>
+            </a>
+        </nav>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content" id="main-content">
+        <!-- Header -->
+        <header class="header">
+            <div class="header-left">
+                <button class="toggle-btn" id="toggle-sidebar">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+            </div>
+            <div class="header-right">
+                <div class="user-profile" id="user-profile-btn">
+                    <span class="user-name" id="header-user-name">Người dùng</span>
+                    <i class="fa-solid fa-chevron-down"></i>
+                    
+                    <!-- Dropdown Menu -->
+                    <div class="dropdown-menu" id="user-dropdown">
+                        <a href="profile.html" class="dropdown-item">
+                            <i class="fa-regular fa-user"></i>
+                            Tài khoản
+                        </a>
+                        <a href="#" class="dropdown-item" id="logout-btn">
+                            <i class="fa-solid fa-arrow-right-from-bracket"></i>
+                            Đăng xuất
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Dashboard Content -->
+        <div id="view-dashboard" class="page-view active">
+            <div class="dashboard-container">
+                <!-- User Info Card -->
+                <div class="card user-info-card">
+                <div class="info-section user-basic">
+                    <div class="avatar">
+                        <i class="fa-regular fa-user"></i>
+                    </div>
+                    <div class="user-details">
+                        <span class="greeting">Xin chào,</span>
+                        <h2 class="name" id="card-user-name">Đang tải...</h2>
+                        <span class="email" id="card-user-email">email@example.com</span>
+                    </div>
+                </div>
+                <div class="info-divider"></div>
+                <div class="info-section stat">
+                    <span class="stat-title">Tổng bài đã làm</span>
+                    <div class="stat-value text-red">0</div>
+                    <span class="stat-unit">bài thi</span>
+                </div>
+                <div class="info-divider"></div>
+                <div class="info-section stat">
+                    <span class="stat-title">Trong năm 2026</span>
+                    <div class="stat-value text-red">0</div>
+                    <span class="stat-unit">bài thi</span>
+                </div>
+                <div class="info-divider"></div>
+                <div class="info-section stat role-section">
+                    <span class="stat-title">Vai trò</span>
+                    <div class="stat-value text-red role-text" id="card-user-role">HỌC SINH</div>
+                    <span class="stat-unit" id="card-user-id">DL123456</span>
+                </div>
+            </div>
+
+            <!-- Grid Cards -->
+            <div class="grid-3">
+                <div class="card empty-card">
+                    <div class="card-header">
+                        <h3>Khóa học</h3>
+                        <a href="#" class="view-all">Xem tất cả</a>
+                    </div>
+                    <div class="card-body empty-state">
+                        Chưa có khóa học nào
+                    </div>
+                </div>
+                <div class="card empty-card">
+                    <div class="card-header">
+                        <h3>Phòng luyện</h3>
+                        <a href="#" class="view-all">Xem tất cả</a>
+                    </div>
+                    <div class="card-body empty-state">
+                        Chưa có phòng luyện nào
+                    </div>
+                </div>
+                <div class="card empty-card">
+                    <div class="card-header">
+                        <h3>Bài thi IRT</h3>
+                        <a href="#" class="view-all">Xem tất cả</a>
+                    </div>
+                    <div class="card-body empty-state">
+                        Chưa có bài thi IRT nào
+                    </div>
+                </div>
+            </div>
+
+            <div class="grid-2">
+                <div class="card empty-card">
+                    <div class="card-header">
+                        <h3>Bài thi gần đây</h3>
+                        <a href="#" class="view-all">Xem tất cả</a>
+                    </div>
+                    <div class="card-body empty-state">
+                        Chưa có bài thi nào
+                    </div>
+                </div>
+                <div class="card empty-card">
+                    <div class="card-header">
+                        <h3>Top 5 điểm cao nhất</h3>
+                    </div>
+                    <div class="card-body empty-state">
+                        Chưa có dữ liệu
+                    </div>
+                </div>
+            </div>
+
+            <!-- Heatmap Card -->
+            <div class="card heatmap-card">
+                <div class="card-header">
+                    <h3>Thống kê làm bài (2026)</h3>
+                    <span class="heatmap-total">0 bài thi trong năm 2026</span>
+                </div>
+                <div class="heatmap-body">
+                    <div class="year-badge">2026</div>
+                    <div class="heatmap-container" id="heatmap">
+                        <!-- JS will generate heatmap -->
+                    </div>
+                </div>
+                <div class="heatmap-footer">
+                    <span class="footer-left">0 bài thi trong năm</span>
+                    <div class="legend">
+                        <span>Ít</span>
+                        <div class="color-box c1"></div>
+                        <div class="color-box c2"></div>
+                        <div class="color-box c3"></div>
+                        <div class="color-box c4"></div>
+                        <div class="color-box c5"></div>
+                        <span>Nhiều</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <!-- Exams View -->
+        <div id="view-exams" class="page-view" style="display: none;">
+            <div class="view-header">
+                <div>
+                    <h2>Bài thi Đánh giá tư duy - TSA</h2>
+                </div>
+                <div>
+                    <button class="btn-outline">Xem tất cả kỳ thi</button>
+                </div>
+            </div>
+            <div class="exam-card">
+                <div class="exam-header font-semibold">Thi thử TSA 2027 Đợt 1 - Tinh Tú 01</div>
+                <div class="exam-body">
+                    <div class="info-row">
+                        <span class="info-label">Hình thức thi:</span>
+                        <span class="badge-green">Thi trực tuyến</span>
+                    </div>
+                    <div class="info-row">
+                        <span class="info-label">Thời gian đăng kí:</span>
+                        <span class="info-value">00:00 30/08/2025 - 19:00 31/08/2025</span>
+                    </div>
+                    <div class="info-row">
+                        <span class="info-label">Đối tượng dự thi:</span>
+                        <span class="badge-green">Tự do</span>
+                    </div>
+                    <div class="info-row">
+                        <span class="info-label">Thời gian thi:</span>
+                        <span class="info-value">19:00 31/08/2026 - 23:59 01/09/2026</span>
+                    </div>
+                </div>
+                <div class="exam-footer">
+                    <button class="btn-disabled" disabled>Hết hạn đăng ký</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- History View -->
+        <div id="view-history" class="page-view" style="display: none;">
+            <div class="view-header">
+                <div>
+                    <h2>Lịch sử làm bài</h2>
+                    <p class="text-gray">Xem lại kết quả các bài thi đã thực hiện.</p>
+                </div>
+                <div class="search-box">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                    <input type="text" placeholder="Tìm kiếm bài thi...">
+                </div>
+            </div>
+            <div class="card empty-card-large">
+                <div class="empty-state-full" style="height: 300px; justify-content: center; background: white; border-radius: 8px;">
+                    <div class="empty-icon-box">
+                        <i class="fa-solid fa-box-open" style="font-size: 32px; color: #ccc;"></i>
+                    </div>
+                    <p>Không có dữ liệu</p>
+                </div>
+            </div>
+        </div>
+
+    </main>
+
+    <script src="js/dashboard.js?v=2"></script>
+</body>
+
+</html>
