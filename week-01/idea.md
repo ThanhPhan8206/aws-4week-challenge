@@ -11,7 +11,7 @@
 ## 2. Công nghệ sử dụng
 * **Frontend:** HTML, CSS, JavaScript (Giao diện hiển thị đồng hồ đếm ngược, bảng câu hỏi và bảng điều khiển trực quan).
 * **Backend:** Node.js (Express framework) xử lý logic chấm điểm, quản lý phiên thi (session), bảo mật chống gian lận và quản lý tài khoản.
-* **Database:** SQL Server (Lưu trữ thông tin học sinh, cấu trúc ngân hàng câu hỏi, ma trận đề thi và bảng điểm chi tiết).
+* **Database:** MySQL (Lưu trữ thông tin học sinh, cấu trúc ngân hàng câu hỏi, ma trận đề thi và bảng điểm chi tiết).
 
 ## 3. Mô tả cách ứng dụng tương tác với hạ tầng VPC đã thiết kế ở Phần 1
 Ứng dụng sẽ được triển khai theo mô hình 3 tầng (3-Tier Architecture) để tận dụng tối đa khả năng bảo mật và tính sẵn sàng cao (High Availability) của hạ tầng VPC:
