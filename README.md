@@ -25,7 +25,7 @@ Học sinh luyện thi TSA/HSA thiếu một môi trường giả lập phòng t
 |---|---|
 | Frontend | HTML, CSS, JavaScript |
 | Backend | Node.js, Express  |
-| Database | SQL Server |
+| Database | MySQL |
 | Hạ tầng | Amazon VPC, EC2, NAT Gateway, Security Group |
 | Giám sát | CloudWatch Agent, Logs, Metrics, Alarms, Dashboard, SNS |
 
